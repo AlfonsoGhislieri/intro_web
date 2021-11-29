@@ -6,14 +6,6 @@ get '/' do
   "Hello! Hello!"
 end
 
-get '/secret' do
-  "Secret hello"
-end
-
-get '/public' do
-  "Public hello"
-end
-
 get '/random-cat' do
   @app_name = ["Amigo", "Misty", "Almond"].sample
   erb(:index)
