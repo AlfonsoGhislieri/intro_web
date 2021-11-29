@@ -14,8 +14,13 @@ get '/public' do
   "Public hello"
 end
 
-get '/cat' do
-  "<div>
-    <img style='border: 2rem solid red' src='https://i.imgur.com/jFaSxym.png'>
-  </div>"
+get '/random-cat' do
+  @app_name = ["Amigo", "Misty", "Almond"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @app_name = params[:name]
+  erb(:index)
 end
